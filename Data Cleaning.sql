@@ -158,7 +158,7 @@ WHERE (t1.industry IS NULL OR t1.industry = '')
 	AND t2.industry IS NOT NULL;
 
 -- We need to update the data with the already available data
--- But first we need to update the lank industry values to NULL to mak it easier for the query to run. Having the mixture of blank and null values does not update the values correctly.
+-- But first we need to update the blank industry values to NULL to mak it easier for the query to run. Having the mixture of blank and null values does not update the values correctly.
 UPDATE layoffs_staging2 
 SET industry = NULL
 WHERE industry = '';
