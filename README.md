@@ -1,5 +1,6 @@
 # Data-Cleaning-and-EDA-Using-MYSQL
-This project contains the layoffs in different countries. It consists of the data cleaning process I used in MySQL.
+Tech firms around the globe are fighting the economic slowdown. The slow consumer spending, higher interest rates by central banks and strong dollars overseas are hinting towards possible recession and tech firms have started laying employees off. This economic slowdown has made Meta recently fire 13% of its workforce, which amounts to more than 11,000 employees.This dataset contains the layoffs in different companies from different industries around the world between 2020 and 2023. <br>
+The project consists of the data cleaning process I used in MySQL, the Exploratory Data Analysis (EDA), and the insights I got from this analysis.
 <br>Data Source: https://www.kaggle.com/datasets/swaptr/layoffs-2022 
 
 The data contained in this dataset pertains to various companies and their layoff statistics. <br>The dataset includes the following columns: <br> 
