@@ -7,28 +7,28 @@ SELECT * FROM layoffs;
 -- 3. Null Values or Blank Values
 -- 4. Remove any Columns or Rows
 
-CREATE TABLE LayoffsStaging
+CREATE TABLE layoffs_staging
 LIKE layoffs;
 
-SELECT * FROM LayoffsStaging;
+SELECT * FROM layoffs_staging;
 
 -- Duplicating the data from the original layoffs table to help in making the editing in the LayoffsStaging table without altering the original data. 
-INSERT INTO LayoffsStaging
-SELECT * FROM Layoffs;
+INSERT INTO layoffs_staging
+SELECT * FROM layoffs;
 
 -- Task 1. Removing Duplicates
 -- First create a unique row identifier (using the window functions).
 SELECT *,
 ROW_NUMBER() OVER (
 	PARTITION BY company, location, industry, percentage_laid_off, `date`) AS row_num
-FROM LayoffsStaging;
+FROM layoffs_staging;
 
 -- partition by each row to help determine the number duplicates. 
 WITH duplicate_cte AS (
 	SELECT *,
 		ROW_NUMBER() OVER (
 			PARTITION BY company, location, industry, total_laid_off, percentage_laid_off, `date`, stage, country, funds_raised_millions) AS row_num
-	FROM LayoffsStaging)
+	FROM layoffs_staging)
 SELECT * FROM duplicate_cte 
 WHERE row_num >1; 
 
@@ -38,7 +38,7 @@ WITH duplicate_cte AS (
 	SELECT *,
 		ROW_NUMBER() OVER (
 			PARTITION BY company, location, industry, total_laid_off, percentage_laid_off, `date`, stage, country, funds_raised_millions) AS row_num
-	FROM LayoffsStaging)
+	FROM layoffs_staging)
 DELETE FROM duplicate_cte 
 WHERE row_num >1; 
 
@@ -64,7 +64,7 @@ INSERT INTO layoffs_staging2
 SELECT *,
 		ROW_NUMBER() OVER (
 			PARTITION BY company, location, industry, total_laid_off, percentage_laid_off, `date`, stage, country, funds_raised_millions) AS row_num
-	FROM LayoffsStaging;
+	FROM layoffs_staging;
 
 -- Deleting the duplicate values     
 SET SQL_SAFE_UPDATES = 0;
