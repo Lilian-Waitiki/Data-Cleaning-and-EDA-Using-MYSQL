@@ -13,9 +13,5 @@ The data contained in this dataset pertains to various companies and their layof
 <br>`country`: The country where the company is located.
 <br>`funds_raised_millions`: The amount of funds raised by the company in millions.
 
-<br>The analysis will involve cleaning the data by 
-<br>1. Removing duplicates
-<br>2. Standardizing the data 
-<br>3. Handling null or blank values
-<br>4. Removing any unnecessary columns or rows.
-<br>I will analyze this dataset to understand the patterns and trends in layoffs across different companies, industries, and locations. 
+<br>The analysis will involve cleaning the data by removing duplicates, standardizing the data, handling null or blank values, and removing any unnecessary columns or rows.
+<br>I will also perform Exploratory Data Analysis to understand the patterns and trends in layoffs across different companies, industries, and locations. 
