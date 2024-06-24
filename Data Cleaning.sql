@@ -84,7 +84,7 @@ SELECT company, TRIM(company) FROM layoffs_staging2;
 UPDATE layoffs_staging2
 SET company = TRIM(company);
 
--- From the industry column, we need to make sure the names are consistent when reffering to the same industry
+-- From the industry column, we need to make sure the names are consistent when refering to the same industry
 -- From the query below we can see that the crypto industry is written differently and hence may create confusion.
 SELECT DISTINCT industry FROM layoffs_staging2
 ORDER BY 1;
