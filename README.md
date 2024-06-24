@@ -4,8 +4,8 @@ This project contains the layoffs in different countries. It consists of the dat
 
 The data contained in this dataset pertains to various companies and their layoff statistics. The dataset includes the following columns:
 
-company: The name of the company.
-location: The location of the company.
+<br>`company`: The name of the company.
+<br>`location`: The location of the company.
 industry: The industry to which the company belongs.
 total_laid_off: The total number of employees laid off.
 percentage_laid_off: The percentage of the workforce that was laid off.
